@@ -9,11 +9,13 @@ phases:
       - echo Entered the build phase...
       - echo Build started on `date`
       - mvn install
+  post build:
+    commands:
+	  - echo "zipping files"
+	  - mv target/*.war .
+	  - zip -r mywebapp.zip appspec.yml start_tomcat.sh stop_tomcat.sh *.war
 artifacts:
   type: zip
   files:
-    - target/*.war
-    - appspec.yml
-    - start_tomcat.sh
-    - stop_tomcat.sh
+    - mywebapp.zip
   discard-paths: yes
