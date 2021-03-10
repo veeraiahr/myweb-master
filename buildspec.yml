@@ -11,9 +11,9 @@ phases:
       - mvn install
   post build:
     commands:
-	  - echo "zipping files"
-	  - mv target/*.war .
-	  - zip -r mywebapp.zip appspec.yml start_tomcat.sh stop_tomcat.sh *.war
+      - echo "zipping files"
+      - mv target/*.war .
+      - zip -r mywebapp.zip appspec.yml start_tomcat.sh stop_tomcat.sh *.war
 artifacts:
   type: zip
   files:
