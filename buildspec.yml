@@ -12,12 +12,9 @@ phases:
   post_build:
     commands:
       - echo Performing Test
-      - zip -r web1.zip .
+      - zip -r web1.zip target/*.war appspec.yml start_tomcat.sh stop_tomcat.sh
 artifacts:
   type: zip
   files:
-    - target/*.war
-    - appspec.yml
-    - start_tomcat.sh
-    - stop_tomcat.sh
+    - web1.zip
   discard-paths: yes
