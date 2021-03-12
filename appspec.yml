@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /target/*.war
-    destination: /opt/tomcat8/webapps
+    destination: /opt/tomcat10/webapps
 hooks:
   BeforeInstall:
     - location: stop_tomcat.sh
