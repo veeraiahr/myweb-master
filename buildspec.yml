@@ -9,6 +9,10 @@ phases:
       - echo Entered the build phase...
       - echo Build started on `date`
       - mvn install
+  post_build:
+    commands:
+      - echo Performing Test
+      - zip -r web1.zip .
 artifacts:
   type: zip
   files:
