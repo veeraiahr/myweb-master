@@ -1,4 +1,4 @@
 #! /bin/bash
-/opt/tomcat9/bin/startup.sh
+/opt/tomcat10/bin/startup.sh
 
 
